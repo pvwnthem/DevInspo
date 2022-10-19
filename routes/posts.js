@@ -18,6 +18,7 @@ router.post('/new', function (req, res) {
         text: req.body.text,
         
     })
+    console.log(req.body)
     if(req.body.tags) {
         np.tags = req.body.tags;
     }
@@ -30,6 +31,25 @@ router.post('/new', function (req, res) {
     
 )
 })
+router.get('/random', (req, res) => {
+    let posts = [];
+    post.count().exec(function(err, count) {
+
+        // Get a random entry
+        var random = Math.floor(Math.random() * count)
+     
+        // Again query all posts but only fetch one offset by our random #
+        post.findOne().skip(random).exec(
+           function(err, result) {
+              // Tada! random post
+              res.send(result)
+           })
+     })
+})
+
+
+
+
 
 router.get('/', (req, res) => {
     res.send('read the api docs at ----')
