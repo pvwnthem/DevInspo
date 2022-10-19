@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const post = require('./models/post');
+const post = require('../models/post');
 const mongoose = require('mongoose');
 const db = "mongodb+srv://pvwnonian:W7KNsY1NoeFL2u9l@cluster0.gzaapzr.mongodb.net/CodeIdeas"
 
