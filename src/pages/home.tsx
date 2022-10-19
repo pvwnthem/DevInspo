@@ -4,7 +4,11 @@ import Submit from './submit'
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 export default function Home() {
-    const [post, setPost] = useState([])
+    const [post, setPost] = useState({
+        title: '',
+        text: '',
+        tags: [],
+    })
 
     const getPost = async () => {
         const {data} = await axios.get('http://localhost:8000/api/v1/posts/random')
@@ -16,7 +20,7 @@ export default function Home() {
     return (
         <>
            
-            < Post title={JSON.stringify(post)} />
+            < Post title={JSON.stringify(post.title).replace(/"/g, "")} text= {JSON.stringify(post.text).replace(/"/g, "")} />
        </> 
     )
 }
