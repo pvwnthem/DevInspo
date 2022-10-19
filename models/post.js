@@ -27,7 +27,7 @@ const postschema = new mongoose.Schema({
         default: Date.now
     },
     id: {
-        type: String,
+        type:  Number,
         required: true,
         unique: true
     }
