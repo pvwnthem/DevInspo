@@ -13,21 +13,20 @@ mongoose.connect(db).then(() => {
 
 
 router.post('/new', function (req, res) {
-    
-    post.findOne({}, {}, { sort: { 'date' : -1 } }, function(err, post) {
-        const np = new post({
-            title: req.body.title,
-            text: req.body.text,
-            
-        })
-        console.log(req.body)
-        if(req.body.tags) {
-            np.tags = req.body.tags;
-        }
+    const np = new post({
+        title: req.body.title,
+        text: req.body.text,
+        id: 'test'
         
+    })
+    console.log(req.body)
+    if(req.body.tags) {
+        np.tags = req.body.tags;
+    }
+    post.findOne({}, {}, { sort: { 'date' : -1 } }, function(err, post) {
         const newid = post.id + 1
         console.log(newid)
-        np.id = String(newid)
+        np.id = newid
       });
     np.save((err, doc) => {
         if(err) {console.log(err);
