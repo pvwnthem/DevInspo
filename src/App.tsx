@@ -7,7 +7,7 @@ function App() {
     <Router>
         < Navbar />
         <Routes>
-            <Route path='/w' element={<Home />} />
+            <Route path='/' element={<Home />} />
             
         </Routes>
     </Router>
