@@ -1,6 +1,7 @@
 import React from 'react';
 import Post from '../components/post'
 import Submit from './submit'
+import Preloader from '../components/preloader';
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 export default function Home() {
@@ -19,8 +20,7 @@ export default function Home() {
       }, []);
     return (
         <>
-           
-            < Post title={JSON.stringify(post.title).replace(/"/g, "")} text= {JSON.stringify(post.text).replace(/"/g, "")} />
+            < Post title={JSON.stringify(post.title)} text= {JSON.stringify(post.text).replace(/"/g, "")} />
        </> 
     )
 }
