@@ -12,7 +12,7 @@ export default function Home() {
     })
 
     const getPost = async () => {
-        const {data} = await axios.get('https://cors-anywhere.herokuapp.com/http://localhost:8000/api/v1/posts/random')
+        const {data} = await axios.get('http://localhost:8000/api/v1/posts/random')
         setPost(data)
     }
     useEffect(() => {
