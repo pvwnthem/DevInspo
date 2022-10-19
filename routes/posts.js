@@ -6,14 +6,6 @@ const mongoose = require('mongoose');
 const db = "mongodb+srv://pvwnonian:W7KNsY1NoeFL2u9l@cluster0.gzaapzr.mongodb.net/CodeIdeas"
 router.use(cors())
 
-const headers = (req, res, next) => {
-	
-	res.setHeader('Access-Control-Allow-Origin', 'http://codeideas.herokuapp.com')
-	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE')
-	res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type')
-	res.setHeader('Access-Control-Allow-Credentials', true)
-	next()
-}
 mongoose.connect(db).then(() => {
     console.log('mongodb connection established');
   }).catch(err => {
@@ -21,7 +13,7 @@ mongoose.connect(db).then(() => {
 });
 
 
-router.post('/new', headers, function (req, res) {
+router.post('/new', function (req, res) {
     
     const np = new post({
         title: req.body.title,
@@ -45,7 +37,7 @@ router.post('/new', headers, function (req, res) {
     
 )
 })
-router.get('/random', headers, (req, res) => {
+router.get('/random', (req, res) => {
     let posts = [];
     post.count().exec(function(err, count) {
 
@@ -65,7 +57,7 @@ router.get('/random', headers, (req, res) => {
 
 
 
-router.get('/', headers, (req, res) => {
+router.get('/',  (req, res) => {
     res.send('read the api docs at ----')
 }
 )
