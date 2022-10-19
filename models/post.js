@@ -12,9 +12,9 @@ const postschema = new mongoose.Schema({
         required: true
     },
     likes: {
-        type: Number,
+        type: Array,
         required: false,
-        default: 0
+        default: []
     },
     tags: {
         type: Array,
@@ -25,6 +25,11 @@ const postschema = new mongoose.Schema({
         type: Date,
         required: false,
         default: Date.now
+    },
+    id: {
+        type: String,
+        required: true,
+        unique: true
     }
 })
 

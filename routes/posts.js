@@ -22,6 +22,10 @@ router.post('/new', function (req, res) {
     if(req.body.tags) {
         np.tags = req.body.tags;
     }
+    post.findOne({}, {}, { sort: { 'date' : -1 } }, function(err, post) {
+        const newid = post.id + 1
+        np.id = String(newid)
+      });
     np.save((err, doc) => {
         if(err) {console.log(err);
             res.send(err)
