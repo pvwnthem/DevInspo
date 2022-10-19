@@ -8,6 +8,7 @@ function App() {
         < Navbar />
         <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/submit' element={<Home />} />
             
         </Routes>
     </Router>
