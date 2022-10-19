@@ -1,7 +1,9 @@
-import express from 'express'
-import cors from 'cors'
-import posts from './routes/posts'
-import path from 'path'
+const express = require('express');
+const cors = require('cors')
+
+
+const posts = require('./routes/posts')
+const path = require('path')
 const app = express()
 
 
