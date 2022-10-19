@@ -6,8 +6,8 @@ const app = express()
 
 app.use(express.urlencoded({ extended: true }));
 app.use('/api/v1/posts', posts)
+const port = process.env.PORT || 8000
 
-
-app.listen(8000, () => {
-    console.log('listening on http://localhost:8000')
+app.listen(port, () => {
+    console.log('listening on ', port)
 })
