@@ -16,6 +16,11 @@ const postschema = new mongoose.Schema({
         required: false,
         default: 0
     },
+    tags: {
+        type: Array,
+        required: false,
+        default: []
+    },
     date: {
         type: Date,
         required: false,
