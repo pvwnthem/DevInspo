@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const cfg = require('./conf.json');
+const cfg = require('./conf.js');
 const post = require('./models/post');
 const mongoose = require('mongoose');
 const db = cfg.dburl
