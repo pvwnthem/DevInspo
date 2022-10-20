@@ -45,7 +45,13 @@ router.get('/removelike', function (req, res) {
         if (err) {
             res.send(err)
         }
-        doc.likes
+        try {
+            delete doc.likes.id
+            res.sendStatus(200)
+        }
+        catch (e) {
+            console.log(e)
+        }
 
     })
 })
