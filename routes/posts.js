@@ -46,8 +46,8 @@ router.get('/removelike', function (req, res) {
             res.send(err)
         }
         try {
-            delete doc.likes.id
-            res.sendStatus(200)
+            doc.likes.pop()
+            doc.save()
         }
         catch (e) {
             console.log(e)
@@ -63,7 +63,8 @@ router.get('/addlike', function (req, res) {
             res.send(err)
         }
         try {
-            doc.likes
+            doc.likes.push('1')
+            doc.save()
             res.sendStatus(200)
         }
         catch (e) {
