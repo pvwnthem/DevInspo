@@ -10,22 +10,17 @@ class Submit extends Component{
     
 
     render() {
-        const [text, setText] = useState('')
-        const onsubmit = (event: any) => {
-            event.preventDefault();
-            
-            setText('')
-        }
+        
 
         
         return (
         <div className='w-full h-full'>
 
-            <form action='api/v1/posts/new' method='post' onSubmit={onsubmit}>
+            <form action='api/v1/posts/new' method='post'>
                 <input name="title" type="text" placeholder='Your Submissions Title' onChange={e => {this.setState({
                     title: e.target.value
                 })
-                setText(e.target.value)
+               
                 }
                 
                 }></input>
