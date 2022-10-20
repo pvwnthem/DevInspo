@@ -6,7 +6,13 @@ class Submit extends Component{
         title: '',
         text: ''
     };
+
+    
+
     render() {
+        const onsubmit = (event: any) => {
+            event.preventDefault();
+        }
         return (
         <div className='w-full h-full'>
 
