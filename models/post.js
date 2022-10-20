@@ -21,9 +21,9 @@ const postschema = new mongoose.Schema({
         required: true
     },
     likes: {
-        type: Array,
+        type: Object,
         required: false,
-        default: []
+        default: {}
     },
     tags: {
         type: Array,
