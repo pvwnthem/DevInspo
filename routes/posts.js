@@ -15,26 +15,38 @@ mongoose.connect(db).then(() => {
 
 
 router.post('/new', function (req, res) {
-    
-    const np = new post({
-        title: req.body.title,
-        text: req.body.text,
+    if(req.body.title && req.body.text) {
+        const np = new post({
+            title: req.body.title,
+            text: req.body.text,
+          
         
         
-        
-    })
-    console.log(req.body)
+        })
+
     if(req.body.tags) {
-        np.tags = req.body.tags;
-    }
-    
-    
-    np.save((err, doc) => {
+           np.tags = req.body.tags;
+        }
+      np.save((err, doc) => {
         if(err) {console.log(err);
             res.send(err)
         }
         res.sendStatus(200)
     }
+    
+        
+    }
+
+   
+    else if(!req.body.title || !req.body.text) {
+       res.send("Not All Fields Entered")
+    }
+    console.log(req.body)
+    
+    
+    
+   
+    
     
 )
 })
