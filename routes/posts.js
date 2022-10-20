@@ -56,6 +56,23 @@ router.get('/removelike', function (req, res) {
     })
 })
 
+router.get('/addlike', function (req, res) {
+    const id = req.query.id;
+    post.findOneAndUpdate({id: id}, (err, doc) => {
+        if (err) {
+            res.send(err)
+        }
+        try {
+            doc.likes
+            res.sendStatus(200)
+        }
+        catch (e) {
+            console.log(e)
+        }
+
+    })
+})
+
 
 router.get('/random', (req, res) => {
     let posts = [];
