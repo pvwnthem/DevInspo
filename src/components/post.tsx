@@ -32,9 +32,9 @@ export default function Post(props: any) {
 
     function addliketocookie () {
         if(cookies.likes) {
-            const old = Array(cookies.likes) 
+            const old = Array(cookies.likes).flat()
             console.log(old)
-            if (old.flat().includes(props.id) ) {
+            if (old.includes(props.id) ) {
                 console.log('already added to cookie')
             }
             else {
@@ -55,8 +55,8 @@ export default function Post(props: any) {
         }
     }
     function resolvebutton() {
-        const old = Array(cookies.likes) 
-        if (old.flat().includes(props.id) ) {
+        const old = Array(cookies.likes).flat()
+        if (old.includes(props.id) ) {
             return true
         } else {
             return false
