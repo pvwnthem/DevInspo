@@ -90,7 +90,7 @@ export default function Post(props: any) {
                 
                 
                 <div>
-                <div className='h-24 mt-8 bg-blue-700 rounded-bl-xl rounded-br-xl items-center py-4'>
+                <div className='h-20 mt-8 bg-blue-700 rounded-bl-xl rounded-br-xl items-center py-4'>
                 { ! button ?(
                     <button className="w-full h-full mx-auto " onClick={() => {setButton(true); addlike(); addliketocookie(); incnum()}}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mx-auto">
