@@ -4,7 +4,10 @@ import ReactLoading from 'react-loading'
 import './loading.css'
 import axios from 'axios';
 import Post from '../components/post'
+import { useCookies } from "react-cookie";
+
 export default function Random(props: any) {
+    
     const [done, setDone] = useState(false)
     const [post, setPost] = useState({
         title: '',

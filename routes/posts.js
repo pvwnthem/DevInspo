@@ -38,7 +38,6 @@ router.post('/new', function (req, res) {
     
 )
 })
-
 router.get('/addlike', async function (req, res) {
     console.log(req.query.id)
     const id = req.query.id
