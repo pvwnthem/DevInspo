@@ -1,105 +1,46 @@
+# Getting Started with Create React App
 
-# CodeInspo
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-CodeInspo is a platform where people can share and view ideas 💡. Without the need for an account, CodeInspo is avalible at a moments notice for any user on any device. Find your next project on CodeInspo!
+## Available Scripts
 
+In the project directory, you can run:
 
+### `npm start`
 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Badges
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-Add badges from somewhere like: [shields.io](https://shields.io/)
+### `npm test`
 
-![MIT License](https://img.shields.io/github/languages/count/pvwnthem/CodeInspo) 
-![GPLv3 License](https://img.shields.io/tokei/lines/github/pvwnthem/CodeInspo)
-![AGPL License](https://img.shields.io/github/repo-size/pvwnthem/CodeInspo)
-![AGPL License](https://img.shields.io/github/commit-activity/w/pvwnthem/CodeInspo)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Authors
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-- [@pvwn](https://www.github.com/pvwnthem)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+### `npm run eject`
 
-## Features
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-- Tags On Posts
-- Live previews Of New Posts
-- Fully responsive, avalible on all devics
-- Lightning Fast, Built On React
-- 
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-## Documentation
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-[Documentation](https://linktodocumentation)
+## Learn More
 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Tech Stack
-
-**Client:** React, TailwindCSS
-
-**Server:** Node, ExpressJS, MongoDB
-
-
-## Lessons Learned
-
-While building this project I learned more about ES6 topics and ReactJS. I learned multiple different ReactJS hooks and there uses like useEffect, useState, and useCallback. I learned how to work with cookies and about CORS. This project taught me a LOT about react and typescript and I hope my project will be able to provide project ideas to people for many years to come!
-
-
-## Roadmap
-
-- More api functionality
-
-- More UI elements and pages
-
-- 
-
-
-## Contributing
-
-Contributions are always welcome!
-
-
-
-
-## API Reference
-
-### Base Url
-```http
-/api/v1
-
-```
-
-
-
-
-### Posts
-
-#### Base Url
-```http
-  /api/v1/posts
-```
-#### Get Random Post
-```http
-GET /api/v1/posts/random
-```
-#### Create Post
-```http
-POST /api/v1/posts/new
-```
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `title`      | `string` | **Required**. Title Of Your Post |
-| `text`      | `string` | **Required**. Content Of Your Post |
-| `tags`      | `array` | **Not Required**. Tags Of Your Post |
-
-
-
-
-
-## Feedback
-
-If you have any feedback, please reach out to me at pvwn.them@gmail.com
-
+To learn React, check out the [React documentation](https://reactjs.org/).
