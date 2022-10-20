@@ -43,7 +43,15 @@ export default function Post(props: any) {
             });
         }
     }
-    const [button, setButton] = useState(false)
+    function resolvebutton() {
+        const old = Array(cookies.likes) 
+        if (old.flat().includes(props.id) ) {
+            return true
+        } else {
+            return false
+        }
+    }
+    const [button, setButton] = useState(resolvebutton())
     async function addlike() {
         const { data }= await axios.get(`http://localhost:8000/api/v1/posts/addlike?id=${props.id}`)
         console.log(data)
