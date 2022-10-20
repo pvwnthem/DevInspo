@@ -30,7 +30,7 @@ router.post('/new', function (req, res) {
       np.save((err, doc) => {
         if(err) {console.log(err);
             res.send(err)
-        }
+        })
         res.sendStatus(200)
     }
     
