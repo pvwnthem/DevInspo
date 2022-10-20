@@ -40,7 +40,7 @@ router.post('/new', function (req, res) {
 })
 
 router.get('/removelike', function (req, res) {
-    const id = req.query.id;
+    const id = String(req.query.id)
     console.log(id, 'id')
     post.findOneAndUpdate({id: id}, (err, doc) => {
         if (err) {
@@ -59,7 +59,7 @@ router.get('/removelike', function (req, res) {
 })
 
 router.get('/addlike', function (req, res) {
-    const id = req.query.id;
+    const id = String(req.query.id);
     console.log(id, 'id')
     post.findOneAndUpdate({id: id}, (err, doc) => {
         if (err) {
