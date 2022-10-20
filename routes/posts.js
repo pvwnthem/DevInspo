@@ -59,7 +59,7 @@ router.get('/removelike', function (req, res) {
 })
 
 router.get('/addlike', function (req, res) {
-    const id = String(req.query.id).replace(/["']/, '');
+    const id = String(req.query.id).replace(/[""]/, '');
     console.log(id, 'id')
     post.findOneAndUpdate({id: id}, (err, doc) => {
         if (err) {
