@@ -42,7 +42,9 @@ router.get('/random', (req, res) => {
     post.count().exec(function(err, count) {
 
         // Get a random entry
-        var random = Math.floor(Math.random() * count)
+        let randomnum = ()=> crypto.getRandomValues(new Uint32Array(1))[0]/2**32;
+
+        var random = Math.floor(randomnum() * count)
      
         // Again query all posts but only fetch one offset by our random #
         post.findOne().skip(random).exec(
