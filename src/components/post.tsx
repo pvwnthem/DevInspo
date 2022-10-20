@@ -32,9 +32,9 @@ export default function Post(props: any) {
 
     function addliketocookie () {
         if(cookies.likes) {
-            const old = Array(cookies.likes) 
+            const old = Array(cookies.likes).flat()
             console.log(old)
-            if (old.flat().includes(props.id) ) {
+            if (old.includes(props.id) ) {
                 console.log('already added to cookie')
             }
             else {
@@ -55,8 +55,8 @@ export default function Post(props: any) {
         }
     }
     function resolvebutton() {
-        const old = Array(cookies.likes) 
-        if (old.flat().includes(props.id) ) {
+        const old = Array(cookies.likes).flat()
+        if (old.includes(props.id) ) {
             return true
         } else {
             return false
@@ -64,12 +64,12 @@ export default function Post(props: any) {
     }
     const [button, setButton] = useState(resolvebutton())
     async function addlike() {
-        const { data }= await axios.get(`http://localhost:8000/api/v1/posts/addlike?id=${props.id}`)
+        const { data }= await axios.get(`https://codeideas.herokuapp.com/api/v1/posts/addlike?id=${props.id}`)
         console.log(data)
         
     }
     async function remove() {
-        const { data }= await axios.get(`http://localhost:8000/api/v1/posts/removelike?id=${props.id}`)
+        const { data }= await axios.get(`https://codeideas.herokuapp.com/api/v1/posts/removelike?id=${props.id}`)
         console.log(data)
         
     }
