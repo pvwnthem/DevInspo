@@ -13,7 +13,7 @@ export default function Home() {
 
     const getPost = async () => {
         
-        const {data} = await axios.get('http://localhost:8000/api/v1/posts/random')
+        const {data} = await fetch('http://localhost:8000/api/v1/posts/random').then(response => response.json())
         setPost(data)
     }
     useEffect(() => {
