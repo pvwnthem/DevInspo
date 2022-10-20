@@ -39,44 +39,7 @@ router.post('/new', function (req, res) {
 )
 })
 
-router.get('/removelike', function (req, res) {
-    const id = String(req.query.id).replace(/["']/, '');
-    console.log(id, 'id')
-    post.findOneAndUpdate({id: id}, (err, doc) => {
-        if (err) {
-            res.send(err)
-        }
-        try {
-            doc.likes.pop()
-            console.log(doc, doc.likes)
-            doc.save()
-        }
-        catch (e) {
-            console.log(e)
-        }
 
-    })
-})
-
-router.get('/addlike', function (req, res) {
-    const id = String(req.query.id).replace(/[""]/, '');
-    console.log(id, 'id')
-    post.findOneAndUpdate({id: id}, (err, doc) => {
-        if (err) {
-            res.send(err)
-        }
-        try {
-            doc.likes.push('1')
-            console.log(doc, doc.likes)
-            doc.save()
-            res.sendStatus(200)
-        }
-        catch (e) {
-            console.log(e)
-        }
-
-    })
-})
 
 
 router.get('/random', (req, res) => {
