@@ -30,12 +30,12 @@ router.post('/new', function (req, res) {
             if(err) {console.log(err);
                 res.send(err)
             }
-            res.sendStatus(200)
+            res.redirect(307, '/submit');
         } 
         
     )
     }else {
-        res.send('not all fields filled out!')
+        res.redirect(307, '/submit');
     }
     
     console.log(req.body)
