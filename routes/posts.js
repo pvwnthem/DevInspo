@@ -43,7 +43,7 @@ router.get('/random', (req, res) => {
     post.count().exec(function(err, count) {
 
         // Get a random entry
-        let randomnum = ()=> crypto.getRandomValues(new Uint32Array(1))[0]/2**32;
+        let randomnum = ()=> crypto.webcrypto.getRandomValues(new Uint32Array(1))[0]/2**32;
 
         var random = Math.floor(randomnum() * count)
      
