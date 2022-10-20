@@ -6,7 +6,7 @@ const current = new Date();
 
 
 
-
+// add a function to reset the cookie back to [] before adding to it
 const nextYear = new Date();
 nextYear.setFullYear(current.getFullYear() + 1);
 

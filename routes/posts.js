@@ -66,6 +66,9 @@ router.get('/removelike', async function (req, res) {
 })
 
 
+// get likes for a doc route 
+// 
+
 router.get('/random', (req, res) => {
     let posts = [];
     post.count().exec(function(err, count) {
