@@ -41,12 +41,14 @@ router.post('/new', function (req, res) {
 
 router.get('/removelike', function (req, res) {
     const id = req.query.id;
+    console.log(id, 'id')
     post.findOneAndUpdate({id: id}, (err, doc) => {
         if (err) {
             res.send(err)
         }
         try {
             doc.likes.pop()
+            console.log(doc, doc.likes)
             doc.save()
         }
         catch (e) {
@@ -58,12 +60,14 @@ router.get('/removelike', function (req, res) {
 
 router.get('/addlike', function (req, res) {
     const id = req.query.id;
+    console.log(id, 'id')
     post.findOneAndUpdate({id: id}, (err, doc) => {
         if (err) {
             res.send(err)
         }
         try {
             doc.likes.push('1')
+            console.log(doc, doc.likes)
             doc.save()
             res.sendStatus(200)
         }
