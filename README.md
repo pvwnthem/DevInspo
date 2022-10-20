@@ -8,7 +8,7 @@ CodeInspo is a platform where people can share and view ideas 💡. Without the 
 
 ## Badges
 
-Add badges from somewhere like: [shields.io](https://shields.io/)
+
 
 ![MIT License](https://img.shields.io/github/languages/count/pvwnthem/CodeInspo) 
 ![GPLv3 License](https://img.shields.io/tokei/lines/github/pvwnthem/CodeInspo)
