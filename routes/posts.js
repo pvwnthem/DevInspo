@@ -38,6 +38,18 @@ router.post('/new', function (req, res) {
     
 )
 })
+
+router.get('/removelike', function (req, res) {
+    const id = req.query.id;
+    post.findOneAndUpdate({id: id}, (err, doc) => {
+        if (err) {
+            res.send(err)
+        }
+
+    })
+})
+
+
 router.get('/random', (req, res) => {
     let posts = [];
     post.count().exec(function(err, count) {

@@ -9,6 +9,7 @@ export default function Home() {
         title: '',
         text: '',
         tags: [],
+        id: '',
     })
 
     const getPost = async () => {
@@ -21,7 +22,7 @@ export default function Home() {
       }, []);
     return (
         <>
-            < Post title={JSON.stringify(post.title)} text= {JSON.stringify(post.text).replace(/"/g, "")} />
+            < Post title={JSON.stringify(post.title)} text= {JSON.stringify(post.text).replace(/"/g, "")} id={JSON.stringify(post.id)} />
        </> 
     )
 }
