@@ -2,6 +2,10 @@ import React from "react";
 import axios from 'axios'
 import { useState} from 'react'
 import { useCookies } from "react-cookie";
+const current = new Date();
+
+const nextYear = new Date();
+nextYear.setFullYear(current.getFullYear() + 1);
 
 export default function Post(props: any) {
     const [cookies, setCookie] = useCookies(['likes'])
@@ -15,6 +19,7 @@ export default function Post(props: any) {
         console.log(newarr)
         setCookie('likes', newarr, {
             path: "/random",
+            expires: nextYear
         })
 
 
@@ -32,6 +37,7 @@ export default function Post(props: any) {
                 old.push(`${props.id}`)
             setCookie('likes', old, {
                 path: '/random',
+                expires: nextYear,
                 
             } )
             }
@@ -39,7 +45,8 @@ export default function Post(props: any) {
         }
         else {
             setCookie('likes', `${props.id}`, {
-                path: "/random"
+                path: "/random",
+                expires: nextYear
             });
         }
     }
