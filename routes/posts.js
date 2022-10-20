@@ -15,28 +15,32 @@ mongoose.connect(db).then(() => {
 
 
 router.post('/new', function (req, res) {
-    
-    const np = new post({
-        title: req.body.title,
-        text: req.body.text,
-        
-        
-        
-    })
-    console.log(req.body)
-    if(req.body.tags) {
-        np.tags = req.body.tags;
-    }
-    
-    
-    np.save((err, doc) => {
-        if(err) {console.log(err);
-            res.send(err)
+    if (req.body.title && req.body.text) {
+        const np = new post({
+            title: req.body.title,
+            text: req.body.text,
+            
+            
+            
+        })
+        if(req.body.tags) {
+            np.tags = req.body.tags;
         }
-        res.sendStatus(200)
+        np.save((err, doc) => {
+            if(err) {console.log(err);
+                res.send(err)
+            }
+            res.sendStatus(200)
+        }
+        
+    )
     }
     
-)
+    console.log(req.body)
+   
+    
+    
+    
 })
 router.get('/addlike', async function (req, res) {
     console.log(req.query.id)
