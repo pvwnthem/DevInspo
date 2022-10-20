@@ -10,8 +10,9 @@ export default function Random(props: any) {
         title: '',
         text: '',
         tags: [],
+        id: ''
     })
-
+    
     const getPost = async () => {
         const {data} = await axios.get('https://codeideas.herokuapp.com/api/v1/posts/random')
         setPost(data)
@@ -44,7 +45,7 @@ export default function Random(props: any) {
             //< ReactLoading type={"bars"} height={400} width={400} className="mx-auto color-blue-700 "/>
 
            ) : (
-            < Post title={JSON.stringify(post.title).replace(/"/g, "")} text= {JSON.stringify(post.text).replace(/"/g, "")} />
+            < Post title={JSON.stringify(post.title).replace(/"/g, "")} text= {JSON.stringify(post.text).replace(/"/g, "")} id= {JSON.stringify(post.id).replace(/"/g, "")}/>
            )
         }
             

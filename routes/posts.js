@@ -39,7 +39,19 @@ router.post('/new', function (req, res) {
 )
 })
 
-
+router.get('/addlike', async function (req, res) {
+    console.log(req.query.id)
+    const id = req.query.id
+     post.findOneAndUpdate({id: id}, { $inc: { likes: 1 }}, (err, doc) => {
+        if(err) {console.log(err);
+            res.send(err)
+        }
+        if (doc) {
+            
+            res.send(String(doc))
+        }
+    })
+})
 
 
 router.get('/random', (req, res) => {
