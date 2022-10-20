@@ -10,7 +10,7 @@ class Submit extends Component{
         return (
         <div className='w-full h-full'>
 
-            <form action='http://localhost:8000/api/v1/posts/new' method='post'>
+            <form action='api/v1/posts/new' method='post'>
                 <input name="title" type="text" placeholder='Your Submissions Title' onChange={e => {this.setState({
                     title: e.target.value
                 })}}></input>
