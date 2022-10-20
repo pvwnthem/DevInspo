@@ -37,7 +37,7 @@ const postschema = new mongoose.Schema({
     },
     id: {
         type:  String,
-        default: makeid(64),
+        default: makeid(128),
         unique: true
     }
 })
