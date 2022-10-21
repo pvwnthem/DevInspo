@@ -1,14 +1,35 @@
 import React, { Component } from 'react';
 import Post from '../components/post'
 import { useState } from 'react'
-class Submit extends Component{
+
+import { useNavigate  } from "react-router-dom"
+import { Function } from 'estree';
+
+
+
+class Submit extends Component<{ nav?: any }>{
     state = {
         title: '',
-        text: ''
+        text: '',
+        
+        charLimit: 256
     };
-
+    content = {
+        
+    }
+    handleChange = (e: any) => {
+        this.setState({[e.target.n]:e.target.v})
+    }
     
-
+    handleSubmit = (e: any) => {
+        e.preventDefault();
+        if (
+            this.state.text.length <= this.state.charLimit
+        ) {
+             
+        }
+        this.props.nav.navigate('/');
+    }
     render() {
         
 
@@ -37,4 +58,8 @@ class Submit extends Component{
     }
 }
 
-export default Submit;
+export function SubWithRouter(props: any) {
+    const navigate = useNavigate()
+    return (<Submit nav={navigate}/>)
+}
+export default SubWithRouter
