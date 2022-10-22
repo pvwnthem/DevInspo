@@ -23,7 +23,7 @@ export default function ExamplePost(props: any) {
         setTimeout(() => {
             setToggle(toggle + 1)
             setToggle2(toggle2 + 1)
-        }, 100
+        }, 150
         )
         useEffect(() => {
             
@@ -33,13 +33,13 @@ export default function ExamplePost(props: any) {
             if(props.text.length >= props.textLimit) {
                 setTextFull(true)
             } 
-            else if(props.text.length < props.textLimit) {
+            if(props.text.length < props.textLimit) {
                 setTextFull(false)
             }
-            else {
-                
-                setTextFull(true)
+            if(props.title.length < props.titleLimit) {
+                setTitleFull(false)
             }
+            
           }, [titleFull, toggle]);
         
     
