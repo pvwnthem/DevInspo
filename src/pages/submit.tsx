@@ -35,7 +35,7 @@ class Submit extends Component<{ nav?: any }>{
         <div className='w-full h-full'>
 
             <form action='api/v1/posts/new' method='post'>
-                <input name="title" type="text" maxLength={128} placeholder='Your Submissions Title' onChange={e => {this.setState({
+                <input name="title" type="text" maxLength={128} placeholder='Your Submissions Title'  onChange={e => {this.setState({
                     title: e.target.value
                 })
                
@@ -48,7 +48,13 @@ class Submit extends Component<{ nav?: any }>{
                 <button type="submit">Submit</button>
             </form>
 
-            <ExamplePost title={this.state.title} text={this.state.text} charCount={this.state.text.length } titleCount={this.state.text.length}/>
+
+
+
+
+
+
+            <ExamplePost title={this.state.title} text={this.state.text} titleLimit={128} textLimit = {1024}/>
         
         </div>
         )

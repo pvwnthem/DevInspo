@@ -1,7 +1,10 @@
 import React from "react";
 import axios from 'axios'
-import { useState} from 'react'
+import { useState, useEffect} from 'react'
 import { useCookies } from "react-cookie";
+import './examplePost.css'
+import e from "express";
+import { off } from "process";
 const current = new Date();
 
 
@@ -11,18 +14,62 @@ const nextYear = new Date();
 nextYear.setFullYear(current.getFullYear() + 1);
 
 export default function ExamplePost(props: any) {
-    
+    const [toggle, setToggle] = useState(0)
+    const [toggle2, setToggle2] = useState(0)
+
     const [button, setButton] = useState(false);
+    const [titleFull, setTitleFull] = useState(false);
+    const [textFull, setTextFull] = useState(false);
+        setTimeout(() => {
+            setToggle(toggle + 1)
+            setToggle2(toggle2 + 1)
+        }, 100
+        )
+        useEffect(() => {
+            
+            if(props.title.length >= props.titleLimit) {
+                setTitleFull(true)
+            } 
+            if(props.text.length >= props.textLimit) {
+                setTextFull(true)
+            } 
+            else if(props.text.length < props.textLimit) {
+                setTextFull(false)
+            }
+            else {
+                
+                setTextFull(true)
+            }
+          }, [titleFull, toggle]);
+        
     
+          
     return (
         
         <div className=" w-screen h-full ">
            
             <div id="o"className="w-full max-w-xl bg-gray-800 mx-auto mt-32 rounded-xl  flex flex-col break-all" >
                 <a className="title flex-wrap lg:text-2xl md:text-2xl sm:text-lg text-white mx-4 mt-4">{ props.title }</a>
+                { titleFull ?  (
+                    <a className="text-xs shake text-red-500 ml-auto mr-8 flex">{props.title.length} / {props.titleLimit} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                  </svg>
+                  </a>
+                ) : (
+                    <a className="text-xs ml-auto mr-8">{props.title.length} / {props.titleLimit}</a>
+                )}
+                
                 
                 <a className="content lg:text-md md:text-md sm:text-sm text-white mx-4 my-4">{ props.text }</a>
                 
+                { textFull ?  (
+                    <a className="text-xs shake text-red-500 ml-auto mr-8 flex">{props.text.length} / {props.textLimit} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+                  </svg>
+                  </a>
+                ) : (
+                    <a className="text-xs ml-auto mr-8">{props.text.length} / {props.textLimit}</a>
+                )}
                 
                 <div>
                 <div className='h-20 mt-8 bg-blue-700 rounded-bl-xl rounded-br-xl items-center py-4'>
