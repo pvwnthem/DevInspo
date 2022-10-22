@@ -35,7 +35,7 @@ export default function SecondaryNav(props: any) {
             setHome(false)
             setOldest(true)
         }
-        else {
+        else if (props.page === '' || props.page === null || props.page === undefined ){
             setHome(true)
         }
     }, [])
