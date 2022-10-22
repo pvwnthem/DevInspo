@@ -20,15 +20,19 @@ export default function SecondaryNav(props: any) {
       }, []);
     useEffect(() => {
         if (props.page === 'recent') {
+            setHome(false)
             setRecent(true)
         }
         if (props.page === 'popular') {
+            setHome(false)
             setPopular(true)
         }
         if (props.page === 'rising') {
+            setHome(false)
             setRising(true)
         }
         if (props.page === 'oldest') {
+            setHome(false)
             setOldest(true)
         }
         else {
