@@ -38,7 +38,7 @@ export default function SecondaryNav(props: any) {
     
     return (
     <>
-    { recent ? (
+    { home ? (
         <div className='w-full h-full flex'>
             {! done ? (
                 <Loading />
