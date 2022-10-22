@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Post from '../components/post'
+import ExamplePost from '../components/examplePost'
 import { useState } from 'react'
 
 import { useNavigate  } from "react-router-dom"
@@ -11,8 +11,9 @@ class Submit extends Component<{ nav?: any }>{
     state = {
         title: '',
         text: '',
+        chars: 0
         
-        charLimit: 256
+       
     };
     content = {
         
@@ -23,11 +24,7 @@ class Submit extends Component<{ nav?: any }>{
     
     handleSubmit = (e: any) => {
         e.preventDefault();
-        if (
-            this.state.text.length <= this.state.charLimit
-        ) {
-             
-        }
+        
         this.props.nav.navigate('/');
     }
     render() {
@@ -38,20 +35,26 @@ class Submit extends Component<{ nav?: any }>{
         <div className='w-full h-full'>
 
             <form action='api/v1/posts/new' method='post'>
-                <input name="title" type="text" placeholder='Your Submissions Title' onChange={e => {this.setState({
+                <input name="title" type="text" maxLength={128} placeholder='Your Submissions Title'  onChange={e => {this.setState({
                     title: e.target.value
                 })
                
                 }
                 
                 }></input>
-                <input name="text" placeholder='Your Submissions Body' onChange={b => {this.setState({
+                <input name="text" placeholder='Your Submissions Body' maxLength={1024} onChange={b => {this.setState({
                     text: b.target.value
                 })}}></input>
                 <button type="submit">Submit</button>
             </form>
 
-            <Post title={this.state.title} text={this.state.text}/>
+
+
+
+
+
+
+            <ExamplePost title={this.state.title} text={this.state.text} titleLimit={128} textLimit = {1024}/>
         
         </div>
         )
