@@ -78,11 +78,11 @@ Contributions are always welcome!
 ### Posts
 
 #### Base Url
-```http
+```
   /api/v1/posts
 ```
 #### Get Random Post
-```http
+```
 GET /api/v1/posts/random
 ```
 #### Create Post
@@ -95,7 +95,12 @@ POST /api/v1/posts/new
 | `text`      | `string` | **Required**. Content Of Your Post |
 | `tags`      | `array` | **Not Required**. Tags Of Your Post |
 
-
+#### Get Recent Posts
+```http
+GET /api/v1/posts/recent
+```
+| Query | Type     | Description                       |
+| `?limit=`      | `number` | **Not Required**. How many of the recent posts to grab |
 
 
 
