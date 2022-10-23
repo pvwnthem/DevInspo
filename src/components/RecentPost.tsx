@@ -83,7 +83,7 @@ export default function Post(props: any) {
         
         <div className=" w-screen h-full ">
            
-            <div id="o"className="w-full max-w-xl bg-gray-800 mx-auto mt-32 rounded-xl  flex flex-col" >
+            <div id="o"className="w-full max-w-xl bg-gray-800 mx-auto mt-24 rounded-xl  flex flex-col" >
                 <a className="title lg:text-2xl md:text-2xl sm:text-lg text-white mx-4 mt-4">{ props.title }</a>
                 
                 <a className="content lg:text-md md:text-md sm:text-sm text-white mx-4 my-4">{ props.text }</a>
