@@ -13,7 +13,7 @@ app.use(function (req, res, next) {
     if (cookie === undefined) {
       // no: set a new cookie
       
-      res.cookie('likes', '{}', { maxAge: 900000, httpOnly: true });
+      res.cookie('likes', '[]', { maxAge: 900000, httpOnly: true });
       console.log('cookie created successfully');
     } else {
       // yes, cookie was already present 
