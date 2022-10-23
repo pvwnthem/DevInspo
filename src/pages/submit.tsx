@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import ExamplePost from '../components/examplePost'
 import { useState } from 'react'
-
-import { useNavigate  } from "react-router-dom"
+import  Redirect, { Navigate }  from 'react-router-dom';
+import { redirect, useNavigate  } from "react-router-dom"
 import { Function } from 'estree';
 
 
 
-class Submit extends Component<{ nav?: any }>{
+class Submit extends Component<{ nav: any }>{
     state = {
         title: '',
         text: '',
@@ -18,15 +18,15 @@ class Submit extends Component<{ nav?: any }>{
     content = {
         
     }
+    
     handleChange = (e: any) => {
         this.setState({[e.target.n]:e.target.v})
     }
     
     handleSubmit = (e: any) => {
-        e.preventDefault();
-        
-        this.props.nav.navigate('/');
-    }
+         
+        this.props.nav('/')
+   }
     render() {
         
 
@@ -34,7 +34,7 @@ class Submit extends Component<{ nav?: any }>{
         return (
         <div className='w-full h-full'>
 
-            <form action='/api/v1/posts/new' method='post' className='mx-auto flex flex-col items-center'>
+            <form action='https://codeideas.herokuapp.com/api/v1/posts/new' method='post' className='mx-auto flex flex-col items-center'>
                 <input name="title" type="text" className=" md:w-1/3 w-full mt-24 border border-black rounded px-2 py-2 " maxLength={128} placeholder='Your Submissions Title'  onChange={e => {this.setState({
                     title: e.target.value
                 })
@@ -46,7 +46,7 @@ class Submit extends Component<{ nav?: any }>{
                     
                     text: b.target.value
                 })}}></textarea>
-                <button type="submit">Submit</button>
+                <button type="submit" onSubmit={this.handleSubmit}>Submit</button>
             </form>
 
 
