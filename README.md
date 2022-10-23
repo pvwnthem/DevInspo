@@ -1,7 +1,7 @@
 
-# CodeInspo
+# DevInspo
 
-CodeInspo is a platform where people can share and view ideas 💡. Without the need for an account, CodeInspo is avalible at a moments notice for any user on any device. Find your next project on CodeInspo!
+DevInspo is a platform where people can share and view ideas 💡. Without the need for an account, DevInspo is avalible at a moments notice for any user on any device. Find your next project on DevInspo!
 
 
 
@@ -10,10 +10,10 @@ CodeInspo is a platform where people can share and view ideas 💡. Without the 
 
 
 
-![MIT License](https://img.shields.io/github/languages/count/pvwnthem/CodeInspo) 
-![GPLv3 License](https://img.shields.io/tokei/lines/github/pvwnthem/CodeInspo)
-![AGPL License](https://img.shields.io/github/repo-size/pvwnthem/CodeInspo)
-![AGPL License](https://img.shields.io/github/commit-activity/w/pvwnthem/CodeInspo)
+![MIT License](https://img.shields.io/github/languages/count/pvwnthem/DevInspo) 
+![GPLv3 License](https://img.shields.io/tokei/lines/github/pvwnthem/DevInspo)
+![AGPL License](https://img.shields.io/github/repo-size/pvwnthem/DevInspo)
+![AGPL License](https://img.shields.io/github/commit-activity/w/pvwnthem/DevInspo)
 
 
 
