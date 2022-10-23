@@ -4,6 +4,7 @@ const post = require('../models/post');
 const cors = require('cors');
 const crypto = require('crypto');
 const mongoose = require('mongoose');
+const { log } = require('console');
 const db = "mongodb+srv://pvwnonian:W7KNsY1NoeFL2u9l@cluster0.gzaapzr.mongodb.net/CodeIdeas"
 router.use(cors())
 
@@ -96,7 +97,12 @@ router.get('/random', (req, res) => {
 
 
 
-
+router.get('/recent', async (req, res) => {
+    const limit = req.query.limit
+    let data = await post.find({}).sort({"date": -1}).limit(limit)
+    log(data)
+    res.send(data)
+})
 
 router.get('/',  (req, res) => {
     res.send('read the api docs at ----')
