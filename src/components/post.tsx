@@ -22,7 +22,7 @@ export default function Post(props: any) {
         newarr = old.filter(item => item !== value)
         console.log(newarr)
         setCookie('likes', newarr, {
-            path: "/",
+            path: "/random",
             expires: nextYear
         })
 
@@ -40,7 +40,7 @@ export default function Post(props: any) {
             else {
                 old.push(`${props.id}`)
             setCookie('likes', old, {
-                path: '/',
+                path: '/random',
                 expires: nextYear,
                 
             } )
@@ -49,7 +49,7 @@ export default function Post(props: any) {
         }
         else {
             setCookie('likes', `${props.id}`, {
-                path: "/",
+                path: "/random",
                 expires: nextYear
             });
         }
