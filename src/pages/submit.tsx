@@ -24,7 +24,7 @@ class Submit extends Component<{ nav: any }>{
     }
     
     handleSubmit = (e: any) => {
-         
+        e.preventDefault()
         this.props.nav('/')
    }
     render() {
