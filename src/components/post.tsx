@@ -85,9 +85,8 @@ export default function Post(props: any) {
            
             <div id="o"className="w-full max-w-xl bg-gray-800 mx-auto mt-32 rounded-xl  flex flex-col" >
                 <a className="title lg:text-2xl md:text-2xl sm:text-lg text-white mx-4 mt-4">{ props.title }</a>
-                
                 <a className="content lg:text-md md:text-md sm:text-sm text-white mx-4 my-4">{ props.text }</a>
-                
+                <p className="ml-auto px-4">{ props.tags}</p>
                 
                 <div>
                 <div className='h-20 mt-8 bg-blue-700 rounded-bl-xl rounded-br-xl items-center py-4'>
