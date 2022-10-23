@@ -28,7 +28,8 @@ CodeInspo is a platform where people can share and view ideas 💡. Without the 
 - Live previews Of New Posts
 - Fully responsive, avalible on all devics
 - Lightning Fast, Built On React
-- 
+- Explot prevention and security
+-
 
 
 ## Documentation
