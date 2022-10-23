@@ -7,21 +7,7 @@ const path = require('path')
 const app = express()
 app.use(cookieParser());
 
-app.use(function (req, res, next) {
-    // check if client sent cookie
-    var cookie = req.cookies.likes;
-    if (cookie === undefined) {
-      // no: set a new cookie
-      
-      res.cookie('likes', '[]', { maxAge: 900000, httpOnly: true });
-      console.log('cookie created successfully');
-    } else {
-      // yes, cookie was already present 
-      console.log('cookie exists', cookie);
-    } 
-    next(); // <-- important!
-  });
-  
+
 
 
 var allowCrossDomain = function(req, res, next) {
