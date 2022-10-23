@@ -99,8 +99,9 @@ POST /api/v1/posts/new
 ```http
 GET /api/v1/posts/recent
 ```
-| Query | Type     | Description                       |
-| `?limit=`      | `number` | **Not Required**. How many of the recent posts to grab |
+| Query     | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `?limit=` | `number` | **Not Required**. How many of the recent posts to grab |
 
 
 
