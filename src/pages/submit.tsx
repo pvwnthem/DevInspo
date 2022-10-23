@@ -24,6 +24,7 @@ class Submit extends Component<{ nav: any }>{
     }
     
     handleSubmit = (e: any) => {
+        console.log('form submitted')
         e.preventDefault()
         this.props.nav('/')
    }
@@ -46,7 +47,7 @@ class Submit extends Component<{ nav: any }>{
                     
                     text: b.target.value
                 })}}></textarea>
-                <button type="submit" onSubmit={this.handleSubmit}>Submit</button>
+                <button type="submit" onSubmit={() => this.handleSubmit}>Submit</button>
             </form>
 
 
