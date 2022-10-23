@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import RecentPost from './RecentPost'
 export default function Recent(props: any) {
     const [data, setData] = useState('')
-    const [limit, setLimit] = useState(5)
+    const [limit, setLimit] = useState(25)
     const getPosts = async () => {
         const {data} = await axios.get(`https://codeideas.herokuapp.com/api/v1/posts/recent?limit=${limit}`)
         const json = data
