@@ -30,6 +30,7 @@ const postschema = new mongoose.Schema({
         required: false,
         default: [',']
     },
+    
     serverTags: {
         type: Array,
         required: false,
