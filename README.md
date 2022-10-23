@@ -22,6 +22,7 @@ CodeInspo is a platform where people can share and view ideas 💡. Without the 
 - [@pvwn](https://www.github.com/pvwnthem)
 
 ## Contributors
+- [@kjvx](https://www.github.com/kjvx)
 - [@cg6016](https://www.github.com/cg6016)
 
 ## Features
