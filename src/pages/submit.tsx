@@ -34,17 +34,18 @@ class Submit extends Component<{ nav?: any }>{
         return (
         <div className='w-full h-full'>
 
-            <form action='api/v1/posts/new' method='post'>
-                <input name="title" type="text" maxLength={128} placeholder='Your Submissions Title'  onChange={e => {this.setState({
+            <form action='/api/v1/posts/new' method='post' className='mx-auto flex flex-col items-center'>
+                <input name="title" type="text" className=" md:w-1/3 w-full mt-24 border border-black rounded px-2 py-2 " maxLength={128} placeholder='Your Submissions Title'  onChange={e => {this.setState({
                     title: e.target.value
                 })
                
                 }
                 
                 }></input>
-                <input name="text" placeholder='Your Submissions Body' maxLength={1024} onChange={b => {this.setState({
+                <textarea name="text" placeholder='Your Submissions Body'  className='border border-black rounded h-56 md:w-1/3 w-full py-2 px-2 max-w-full' maxLength={1024} onChange={b => {this.setState({
+                    
                     text: b.target.value
-                })}}></input>
+                })}}></textarea>
                 <button type="submit">Submit</button>
             </form>
 
