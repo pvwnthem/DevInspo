@@ -2,6 +2,7 @@ import React from "react";
 import axios from 'axios'
 import { useState} from 'react'
 import { useCookies } from "react-cookie";
+import {useEffect} from 'react'
 const current = new Date();
 
 
@@ -28,7 +29,6 @@ export default function Post(props: any) {
 
 
     }
-
 
     function addliketocookie () {
         if(cookies.likes) {
@@ -63,6 +63,9 @@ export default function Post(props: any) {
         }
     }
     const [button, setButton] = useState(resolvebutton())
+
+    const [tags, setTags] = useState([])
+    
     async function addlike() {
         const { data }= await axios.get(`https://codeideas.herokuapp.com/api/v1/posts/addlike?id=${props.id}`)
         console.log(data)
@@ -87,7 +90,7 @@ export default function Post(props: any) {
                 <a className="title lg:text-2xl md:text-2xl sm:text-lg text-white mx-4 mt-4">{ props.title }</a>
                 
                 <a className="content lg:text-md md:text-md sm:text-sm text-white mx-4 my-4">{ props.text }</a>
-                
+                <p>{props.tags}</p>
                 
                 <div>
                 <div className='h-20 mt-8 bg-blue-700 rounded-bl-xl rounded-br-xl items-center py-4'>

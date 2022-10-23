@@ -100,10 +100,16 @@ router.get('/random', (req, res) => {
 router.get('/recent', async (req, res) => {
     const limit = req.query.limit
     let data = await post.find({}).sort({"date": -1}).limit(limit)
-    log(data)
     res.send(data)
 })
-
+router.get('/popular', async (req, res) => {
+    const limit = req.query.limit
+    let data = await post.find({}).sort({"likes": -1}).limit(limit)
+    data[0].tags.push('popular')
+    
+    console.log(data)
+    res.send(data)
+})
 router.get('/',  (req, res) => {
     res.send('read the api docs at ----')
 }
