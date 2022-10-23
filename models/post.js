@@ -28,9 +28,9 @@ const postschema = new mongoose.Schema({
     tags: {
         type: Array,
         required: false,
-        default: [',']
+        default: []
     },
-    
+
     serverTags: {
         type: Array,
         required: false,
