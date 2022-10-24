@@ -16,9 +16,7 @@ export default function Submit(){
 
     const navigate = useNavigate()
     const handleSubmit = (e: any) => {
-        setTimeout(() => {
-            console.log('waiting')
-        }, 2000)
+        
         console.log('form submitted')
         e.preventDefault()
         navigate('/')
@@ -39,7 +37,7 @@ export default function Submit(){
                 
                 }></input>
                 <textarea name="text" placeholder='Your Submissions Body'  className='border border-black rounded h-56 md:w-1/3 w-full py-2 px-2 max-w-full' maxLength={1024} onChange={b => {setText(b.target.value)}}></textarea>
-                <button type="submit" onClick={(e) => handleSubmit(e)}>Submit</button>
+                <button type="submit" onSubmit={(e) => handleSubmit(e)}>Submit</button>
             </form>
 
 
