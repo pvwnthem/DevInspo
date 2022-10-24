@@ -27,7 +27,7 @@ export default function Submit(){
         try {
             
           // make axios post request
-          await axios.get(`http://localhost:8000/api/v1/posts/new?title=${formValue.title}?text=${formValue.text}`)
+          await axios.get(`/api/v1/posts/new?title=${formValue.title}?text=${formValue.text}`)
          
           
         } catch(error) {
