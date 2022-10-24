@@ -48,6 +48,49 @@ router.post('/new', function (req, res) {
     
     
 })
+
+
+
+router.get('/new', function (req, res) {
+    if (req.query.title && req.query.text) {
+        const np = new post({
+            title: req.query.title,
+            text: req.query.text,
+            id: uuid.v4(),
+            
+            
+            
+        })
+        if(req.query.tags) {
+            np.tags = req.query.tags;
+        }
+        np.save((err, doc) => {
+            if(err) {console.log(err);
+                res.send(err)
+            }
+            res.sendStatus(200)
+        } 
+        
+    )
+    }else {
+        
+        res.send('not all fields filled out!')
+    }
+    
+    console.log(req.body)
+   
+    
+    
+    
+})
+
+
+
+
+
+
+
+
 router.get('/addlike', async function (req, res) {
     console.log(req.query.id)
     const id = req.query.id
