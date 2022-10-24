@@ -34,7 +34,7 @@ export default function Submit(){
         } catch(error) {
           console.log(error)
         }
-         navigate('/')
+         navigate('/random')
       }
     
       const handleChange = (event: any) => {
