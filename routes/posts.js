@@ -68,7 +68,7 @@ router.get('/new', function (req, res) {
             if(err) {console.log(err);
                 res.send(err)
             }
-            res.redirect('https://codeideas.herokuapp.com/')
+            
         } 
         
     )

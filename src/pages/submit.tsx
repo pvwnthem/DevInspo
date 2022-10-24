@@ -28,13 +28,13 @@ export default function Submit(){
             
           // make axios post request
           await axios.get(`/api/v1/posts/new?title=${formValue.title}&text=${formValue.text}`)
-         
+            navigate('https://codeideas.herokuapp.com')
          
           
         } catch(error) {
           console.log(error)
         }
-         navigate('/S')
+         
       }
     
       const handleChange = (event: any) => {
