@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const crypto = require('crypto')
 function makeid(length) {
     var result           = '';
     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -41,11 +41,7 @@ const postschema = new mongoose.Schema({
         required: false,
         default: Date.now
     },
-    id: {
-        type:  String,
-        default: makeid(128),
-        unique: true
-    }
+    
 })
 
 

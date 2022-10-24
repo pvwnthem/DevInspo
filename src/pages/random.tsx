@@ -13,7 +13,7 @@ export default function Random(props: any) {
         title: '',
         text: '',
         tags: [],
-        id: '',
+        _id: '',
         likes: '',
     })
     
@@ -49,7 +49,7 @@ export default function Random(props: any) {
             //< ReactLoading type={"bars"} height={400} width={400} className="mx-auto color-blue-700 "/>
 
            ) : (
-            < Post title={JSON.stringify(post.title).replace(/"/g, "")} text= {JSON.stringify(post.text).replace(/"/g, "")} tags = {JSON.stringify(post.tags).replace(/[\[\]"]+/g,'').replace(/,+/g, ' #')} id= {JSON.stringify(post.id).replace(/"/g, "")} likes = {JSON.stringify(post.likes)}/>
+            < Post title={JSON.stringify(post.title).replace(/"/g, "")} text= {JSON.stringify(post.text).replace(/"/g, "")} tags = {JSON.stringify(post.tags).replace(/[\[\]"]+/g,'').replace(/,+/g, ' #')} id= {JSON.stringify(post._id)} likes = {JSON.stringify(post.likes)}/>
            )
         }
             
