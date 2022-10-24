@@ -16,7 +16,7 @@ export default function Submit(){
         title: '',
         text: ''
       });
-    
+      // if the url has a req.query than render a simple success message
       const handleSubmit = async (e: any) => {
         
         // store the states in the form data
@@ -25,7 +25,7 @@ export default function Submit(){
         loginFormData.append("text", formValue.text)
       
         try {
-            
+        
           // make axios post request
           await axios.get(`/api/v1/posts/new?title=${formValue.title}&text=${formValue.text}`)
             navigate('https://codeideas.herokuapp.com')
