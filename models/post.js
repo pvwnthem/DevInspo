@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const uuid = require('uuid');
 function makeid(length) {
     var result           = '';
     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -42,7 +42,7 @@ const postschema = new mongoose.Schema({
     },
     id: {
         type:  String,
-        default: makeid(128),
+        default: uuid.v4(),
         unique: true
     }
 })
