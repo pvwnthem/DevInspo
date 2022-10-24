@@ -28,6 +28,7 @@ export default function Submit(){
             
           // make axios post request
           await axios.get(`/api/v1/posts/new?title=${formValue.title}&text=${formValue.text}`)
+          navigate('/')
          
           
         } catch(error) {
