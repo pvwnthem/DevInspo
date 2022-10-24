@@ -29,7 +29,7 @@ export default function Submit(){
         return (
         <div className='w-full h-full'>
 
-            <form action='https://codeideas.herokuapp.com/api/v1/posts/new' method='post' className='mx-auto flex flex-col items-center' onSubmit={(e) => {e.preventDefault(); navigate('/')}}>
+            <form action='https://codeideas.herokuapp.com/api/v1/posts/new' method='post' className='mx-auto flex flex-col items-center' onSubmit={handleSubmit}>
                 <input name="title" type="text" className=" md:w-1/3 w-full mt-24 border border-black rounded px-2 py-2 " maxLength={128} placeholder='Your Submissions Title'  onChange={e => {
                     setTitle(e.target.value)
                
