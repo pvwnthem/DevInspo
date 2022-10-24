@@ -16,6 +16,9 @@ export default function Submit(){
 
     const navigate = useNavigate()
     const handleSubmit = (e: any) => {
+        setTimeout(() => {
+            console.log('waiting')
+        }, 2000)
         console.log('form submitted')
         e.preventDefault()
         navigate('/')
