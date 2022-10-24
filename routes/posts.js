@@ -5,6 +5,7 @@ const cors = require('cors');
 const crypto = require('crypto');
 const mongoose = require('mongoose');
 const { log } = require('console');
+const uuid = require('uuid');
 const db = "mongodb+srv://pvwnonian:W7KNsY1NoeFL2u9l@cluster0.gzaapzr.mongodb.net/CodeIdeas"
 router.use(cors())
 
@@ -20,6 +21,7 @@ router.post('/new', function (req, res) {
         const np = new post({
             title: req.body.title,
             text: req.body.text,
+            id: uuid.v4(),
             
             
             
