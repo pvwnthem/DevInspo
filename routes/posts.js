@@ -62,6 +62,7 @@ router.get('/addlike', async function (req, res) {
 router.get('/removelike', async function (req, res) {
     console.log(req.query.id)
     const id = req.query.id
+    
      post.findOneAndUpdate({_id: id}, { $inc: { likes: -1 }}, (err, doc) => {
         if(err) {console.log(err);
             res.send(err)
