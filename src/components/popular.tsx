@@ -9,7 +9,7 @@ export default function Recent(props: any) {
         const {data} = await axios.get(`http://localhost:8000/api/v1/posts/popular?limit=${limit}`)
         const json = data
         const arr = json.map(
-            (x: any) => < RecentPost title={JSON.stringify(x.title).replace(/"/g, "")} text= {JSON.stringify(x.text).replace(/"/g, "")} id= {JSON.stringify(x.id).replace(/"/g, "")} likes = {JSON.stringify(x.likes)} tags = {JSON.stringify( x.tags).replace(/[\[\]"]+/g,'').replace(/,+/g, ' #')} serverTags = {JSON.stringify(x.serverTags)} /> 
+            (x: any) => < RecentPost title={JSON.stringify(x.title).replace(/"/g, "")} text= {JSON.stringify(x.text).replace(/"/g, "")} id= {JSON.stringify(x._id)} likes = {JSON.stringify(x.likes)} tags = {JSON.stringify( x.tags).replace(/[\[\]"]+/g,'').replace(/,+/g, ' #')} serverTags = {JSON.stringify(x.serverTags)} /> 
         )
         console.log(arr)
         return arr;
