@@ -8,7 +8,9 @@ export default function Navbar() {
     console.log(navbar)
     return (
         <nav className="w-full bg-white shadow ">
+            
             <div className="justify-between px-4 mx-auto lg:max-w-6xl md:items-center md:flex md:px-8">
+            
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <a href="/">
@@ -74,7 +76,18 @@ export default function Navbar() {
                         </ul>
                     </div>
                 </div>
+                <div className='flex md:flex-col w-full md:visible invisible  absolute md:mt-56 h-12 '>
+                <ol>    
+                <li className='text-2xl text-black  md:mt-48 mt-4'>Home</li>
+                <li className='text-2xl text-black  mt-4'>About</li>
+                <li className='text-2xl text-black mt-4  '>Contact</li>
+                <li className='text-2xl text-black mt-4  '>Privacy Policy</li>
+                </ol>
+                
             </div>
+            </div>
+            
+            
         </nav>
     );
 }
