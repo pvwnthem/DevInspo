@@ -8,9 +8,9 @@ const app = express()
 app.use(cookieParser());
 
 
-app.get('/pp', (req, res) => {
-    res.sendFile(path.join( __dirname, 'src', 'components', 'pp.html'))
-})
+//app.get('/pp', (req, res) => {
+    //res.sendFile(path.join( __dirname, 'src', 'components', 'pp.html'))
+//})
 
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', "*");
