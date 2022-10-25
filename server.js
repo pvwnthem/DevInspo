@@ -8,7 +8,7 @@ const app = express()
 app.use(cookieParser());
 
 
-router.get('/pp', (req, res) => {
+app.get('/pp', (req, res) => {
     res.sendFile(path.join( __dirname, 'src', 'components', 'pp.html'))
 })
 
