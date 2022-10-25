@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react';
 import Loading from '../components/loading'
 import Oldest from '../components/oldest'
+import Risinge from '../components/rising'
 
 import Recent from '../components/recent'
 import Popular from '../components/popular'
@@ -157,7 +158,7 @@ export default function SecondaryNav(props: any) {
                   </li>
               </ul>  
                 </div>
-              < Oldest />
+              < Risinge />
           </div>  
             
             )}
