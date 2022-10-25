@@ -11,9 +11,10 @@ export default function Oldest(props: any) {
         let newarr: any = []
         
         json.forEach((doc:any) => {
-            if (doc.likes > 0) [
+            if (doc.likes > 0) {
                 newarr.push(doc)
-            ]
+            
+            }
         })
         const arr = newarr.map(
             (x: any) => < RecentPost title={JSON.stringify(x.title).replace(/"/g, "")} text= {JSON.stringify(x.text).replace(/"/g, "")}tags = {JSON.stringify( x.tags).replace(/[\[\]"]+/g,'').replace(/,+/g, ' #')} id= {JSON.stringify(x.id).replace(/"/g, "")} likes = {JSON.stringify(x.likes)}/> 
