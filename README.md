@@ -1,4 +1,4 @@
-
+# THE SITE IS NOT DEPLOYED FROM THIS REPO, I AM AWARE OF ANYTHING RELATED TO "LEAKED" MONGODB URLs OR ANYTHING ELSE THAT SHOULD BE CONCEALED IN PRODUCTION.
 # DevInspo
 
 DevInspo is a platform where people can share and view ideas 💡. Without the need for an account, DevInspo is avalible at a moments notice for any user on any device. Find your next project on DevInspo!
