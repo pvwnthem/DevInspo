@@ -6,7 +6,7 @@ export default function Recent(props: any) {
     const [data, setData] = useState('')
     const [limit, setLimit] = useState(25)
     const getPosts = async () => {
-        const {data} = await axios.get(`https://codeideas.herokuapp.com/api/v1/posts/recent?limit=${limit}`)
+        const {data} = await axios.get(`https://devinspo.vercelapp.com/api/v1/posts/recent?limit=${limit}`)
         const json = data
         const arr = json.map(
             (x: any) => < RecentPost title={JSON.stringify(x.title).replace(/"/g, "")} text= {JSON.stringify(x.text).replace(/"/g, "")}tags = {JSON.stringify( x.tags).replace(/[\[\]"]+/g,'').replace(/,+/g, ' #')} id= {JSON.stringify(x.id).replace(/"/g, "")} likes = {JSON.stringify(x.likes)}/> 
