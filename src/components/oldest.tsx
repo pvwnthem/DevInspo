@@ -9,12 +9,8 @@ export default function Oldest(props: any) {
         const {data} = await axios.get(`https://codeideas.herokuapp.com/api/v1/posts/oldest?limit=${limit}`)
         const json = data
         const arr = json.map(
-            (x: any) => { if(x.likes > 0) {
-                < RecentPost title={JSON.stringify(x.title).replace(/"/g, "")} text= {JSON.stringify(x.text).replace(/"/g, "")}tags = {JSON.stringify( x.tags).replace(/[\[\]"]+/g,'').replace(/,+/g, ' #')} id= {JSON.stringify(x.id).replace(/"/g, "")} likes = {JSON.stringify(x.likes)} />
-            }   else {
-                return null
-            }
-    })
+            (x: any) => < RecentPost title={JSON.stringify(x.title).replace(/"/g, "")} text= {JSON.stringify(x.text).replace(/"/g, "")}tags = {JSON.stringify( x.tags).replace(/[\[\]"]+/g,'').replace(/,+/g, ' #')} id= {JSON.stringify(x.id).replace(/"/g, "")} likes = {JSON.stringify(x.likes)}/> 
+    )
         console.log(arr)
         return arr;
     }
