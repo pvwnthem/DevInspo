@@ -30,6 +30,11 @@ export default function Post(props: any) {
 
     }
 
+
+
+
+    
+
     function addliketocookie () {
         if(cookies.likes) {
             const old = Array(cookies.likes).flat()
