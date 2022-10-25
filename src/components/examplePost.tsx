@@ -47,6 +47,8 @@ export default function ExamplePost(props: any) {
     return (
         
         <div className=" w-screen h-full ">
+
+            
            <form>
             <div id="o"className="w-full max-w-xl bg-gray-800 mx-auto mt-32 rounded-xl  flex flex-col break-all" >
                 <a className="title flex-wrap lg:text-2xl md:text-2xl sm:text-lg text-white mx-4 mt-4">{ props.title }</a>
