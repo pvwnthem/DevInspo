@@ -76,7 +76,7 @@ export default function Navbar() {
                         </ul>
                     </div>
                 </div>
-                <div className='flex md:flex-col w-full md:visible invisible  absolute md:mt-56 h-12 '>
+                <div className='flex md:flex-col w-48 md:visible invisible  absolute md:mt-56 h-12 '>
                 <ol>    
                 <li className='text-2xl text-black  md:mt-48 mt-4'>Home</li>
                 <li className='text-2xl text-black  mt-4'>About</li>
