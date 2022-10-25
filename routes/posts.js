@@ -16,6 +16,7 @@ mongoose.connect(db).then(() => {
 });
 
 
+
 router.post('/new', function (req, res) {
     if (req.body.title && req.body.text) {
         const np = new post({
