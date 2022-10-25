@@ -12,7 +12,7 @@ export default function Oldest(props: any) {
             (x: any) => { if(x.likes > 0) {
                 < RecentPost title={JSON.stringify(x.title).replace(/"/g, "")} text= {JSON.stringify(x.text).replace(/"/g, "")}tags = {JSON.stringify( x.tags).replace(/[\[\]"]+/g,'').replace(/,+/g, ' #')} id= {JSON.stringify(x.id).replace(/"/g, "")} likes = {JSON.stringify(x.likes)} />
             }   else {
-                null
+                return null
             }
     })
         console.log(arr)
