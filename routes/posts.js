@@ -148,6 +148,13 @@ router.get('/recent', async (req, res) => {
     let data = await post.find({}).sort({"date": -1}).limit(limit)
     res.send(data)
 })
+
+router.get('/oldest', async (req, res) => {
+    const limit = req.query.limit
+    let data = await post.find({}).sort({"date": 1}).limit(limit)
+    res.send(data)
+})
+
 router.get('/popular', async (req, res) => {
     const limit = req.query.limit
     let data = await post.find({}).sort({"likes": -1}).limit(limit)
