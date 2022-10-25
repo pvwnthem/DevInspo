@@ -107,7 +107,21 @@ GET /api/v1/posts/recent
 | :-------- | :------- | :-------------------------------- |
 | `?limit=` | `number` | **Not Required**. How many of the recent posts to grab |
 
+#### Get All Time Popular Posts
+```http
+GET /api/v1/posts/popular
+```
+| Query     | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `?limit=` | `number` | **Not Required**. How many of the most liked posts to grab |
 
+#### Get Oldest Posts
+```http
+GET /api/v1/posts/oldest
+```
+| Query     | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `?limit=` | `number` | **Not Required**. How many of the oldest posts to grab |
 
 ## Feedback
 
