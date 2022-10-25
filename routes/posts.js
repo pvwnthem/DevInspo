@@ -169,14 +169,15 @@ router.get('/popular', async (req, res) => {
 router.get('/rising', async (req, res) => {
     
     const limit = req.query.limit
-    let newarr = []
+    
     let data = await post.find({}).sort({"date": -1}).limit(limit)
-    data.forEach((doc) => {
-        if (doc.likes > 0) {
-            newarr.push(doc)
-        }
-    })
-    res.send(newarr)
+    
+    
+        
+        
+    res.send(data)
+   
+    
 })
 
 router.get('/',  (req, res) => {
