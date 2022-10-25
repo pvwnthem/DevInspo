@@ -7,7 +7,7 @@ export default function Oldest(props: any) {
     const [data, setData] = useState('')
     const [limit, setLimit] = useState(100)
     const getPosts = async () => {
-        const {data} = await axios.get(`https://codeideas.herokuapp.com/api/v1/posts/rising?limit=${limit}`)
+        const {data} = await axios.get(`https://codeinspo.herokuapp.com/api/v1/posts/rising?limit=${limit}`)
         const json = data
         let newarr: any = []
         

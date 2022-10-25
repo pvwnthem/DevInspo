@@ -72,12 +72,12 @@ export default function Post(props: any) {
     const [tags, setTags] = useState([])
     
     async function addlike() {
-        const { data }= await axios.get(`https://codeideas.herokuapp.com/api/v1/posts/addlike?id=${props.id}`)
+        const { data }= await axios.get(`https://codeinspo.herokuapp.com/api/v1/posts/addlike?id=${props.id}`)
         console.log(data)
         
     }
     async function remove() {
-        const { data }= await axios.get(`https://codeideas.herokuapp.com/api/v1/posts/removelike?id=${props.id}`)
+        const { data }= await axios.get(`https://codeinspo.herokuapp.com/api/v1/posts/removelike?id=${props.id}`)
         console.log(data)
         
     }

@@ -24,7 +24,7 @@ export default function Home() {
     
     const getPost = async () => {
         
-        const {data} = await axios.get('https://codeideas.herokuapp.com/api/v1/posts/random')
+        const {data} = await axios.get('https://codeinspo.herokuapp.com/api/v1/posts/random')
         
         setPost(data)
     }
