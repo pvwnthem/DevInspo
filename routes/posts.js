@@ -163,6 +163,22 @@ router.get('/popular', async (req, res) => {
     console.log(data)
     res.send(data)
 })
+
+
+
+router.get('/rising', async (req, res) => {
+    
+    const limit = req.query.limit
+    let newarr = []
+    let data = await post.find({}).sort({"date": -1}).limit(limit)
+    data.forEach((doc) => {
+        if (doc.likes > 0) {
+            newarr.push(doc)
+        }
+    })
+    res.send(newarr)
+})
+
 router.get('/',  (req, res) => {
     res.send('read the api docs at ----')
 }
